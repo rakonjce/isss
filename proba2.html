@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		/* CSS for the login form */
+		form {
+			margin: auto;
+			max-width: 400px;
+			border: 1px solid blue;
+			padding: 20px;
+		}
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px 12px 40px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			background-image: url('https://www.example.com/user-icon.png');
+			background-repeat: no-repeat;
+			background-size: 20px 20px;
+			background-position: 10px center;
+		}
+		input[type=password] {
+			background-image: url('https://www.example.com/password-icon.png');
+		}
+		button {
+			background-color: blue;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<div>
+			<img src="https://www.example.com/logo.png" alt="Logo" style="width: 50%; margin: auto;">
+		</div>
+		<label for="username"><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="username" id="username" required>
+		<label for="password"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="password" id="password" required>
+		<button type="button" onclick="login()">Login</button>
+	</form>
+	<script>
+		// JavaScript for the login form
+		function login() {
+			// Get the values entered in the username and password fields
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			// Check if the username and password match the expected values
+			if (username !== "example_username" || password !== "example_password") {
+				// If they do not match, display a notification message
+				alert("Wrong username or password. Please try again.");
+			} else {
+				// If they match, redirect the user to the dashboard or another page
+				window.location.href = "dashboard.html";
+			}
+		}
+	</script>
+</body>
+</html>
