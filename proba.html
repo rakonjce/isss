@@ -33,7 +33,7 @@
 			box-sizing: border-box;
 		}
 		
-		input[type="submit"] {
+		button {
 			background-color: blue;
 			color: white;
 			cursor: pointer;
@@ -43,7 +43,7 @@
 			border-radius: 5px;
 		}
 		
-		input[type="submit"]:hover {
+		button:hover {
 			background-color: #061d40;
 		}
         img {
@@ -61,7 +61,7 @@
 		
 		<input type="password" id="password" name="password"  placeholder="Šifra" required>
 
-		<input type="submit" value="LOGIN">
+		<button type="button" onclick="login()">Login</button>
 	</form>
 
     <script>
@@ -69,7 +69,14 @@
         {
             var username=document.getElementById("username").value;
             var password=document.getElementById("password").value;
-            if (username!==)
+            if (username!=="admin" || password!=="admin") {
+				alert("Pogrešno korisničko ime ili šifra!");
+			}
+			else {
+				// poziv na bazu, provjera da li je korisnik u bazi
+				window.location.href = "home.html";
+			}
         }
+					</script>
 </body>
 </html>

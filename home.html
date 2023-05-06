@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>University Degrees and Specializations</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+          text-align: center;
+        }
+        
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+        li {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,.2);
+          margin: 10px;
+          padding: 20px;
+          width: calc(33.33% - 20px);
+          text-align: center;
+          font-size: medium;
+        }
+        
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+        
+        a:hover {
+          color: #008cba;
+        }
+      </style>
+       <style>
+        .card {
+          background-color: #008cba;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,.2);
+          color: white;
+          margin: 20px auto;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        .card h2 {
+          font-weight: bold;
+        }
+      </style>
+  </head>
+  <body>
+    <h2>Home</h2>
+    <h3>Welcome User</h3>
+    <button id="logout_btn" value="Log Out" onclick="logout()">Log out</button><br>
+    <h1>University Degrees and Specializations</h1>
+    <p>Choose a degree to see its specializations:</p>
+    <div class="card">
+        <h2>Card Example</h2>
+        <p>Card </p>
+      </div>
+
+    <ul>
+        <li>
+            <div class="card">
+                <h2>Card Example</h2>
+                <p>This is an example of a card with a background color and centered text that is bolded.</p>
+              </div>
+
+        </li>
+      <li><a href="bachelor.html">Bachelor's Degree</a></li>
+      <li><a href="#master">Master's Degree</a></li>
+      <li><a href="#doctorate">Doctorate Degree</a></li>
+    </ul>
+    
+    <h2 id="bachelor">Bachelor's Degree</h2>
+    <ul>
+      <li>Accounting</li>
+      <li>Biology</li>
+      <li>Computer Science</li>
+      <li>Education</li>
+      <li>Engineering</li>
+      <li>English</li>
+      <li>History</li>
+      <li>Marketing</li>
+      <li>Mathematics</li>
+      <li>Psychology</li>
+      <li>Sociology</li>
+    </ul>
+    
+    <h2 id="master">Master's Degree</h2>
+    <ul>
+      <li>Business Administration</li>
+      <li>Counseling</li>
+      <li>Education</li>
+      <li>Engineering</li>
+      <li>Information Technology</li>
+      <li>Law</li>
+      <li>Marketing</li>
+      <li>Mathematics</li>
+      <li>Psychology</li>
+      <li>Social Work</li>
+      <li>Statistics</li>
+    </ul>
+    
+    <h2 id="doctorate">Doctorate Degree</h2>
+    <ul>
+      <li>Biology</li>
+      <li>Business Administration</li>
+      <li>Counseling</li>
+      <li>Education</li>
+      <li>Engineering</li>
+      <li>Law</li>
+      <li>Mathematics</li>
+      <li>Psychology</li>
+      <li>Social Work</li>
+      <li>Statistics</li>
+    </ul>
+    <script>
+        function logout() {
+            window.location.href = "proba.html";
+        }
+    </script>
+  </body>
+</html>

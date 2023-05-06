@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload Example</title>
+  </head>
+  <body>
+    <h1>File Upload Example</h1>
+    <form>
+      <label for="file">Select a file:</label>
+      <input type="file" id="file" name="file"><br>
+      <button type="button" onclick="uploadFile()">Upload</button>
+    </form>
+    <p id="status"></p>
+    
+    <script>
+      function uploadFile() {
+        var fileInput = document.getElementById("file");
+        if(!fileInput.files.length) {
+          return alert("Please choose a file to upload first.");
+        }
+        var file = fileInput.files[0];
+        var formData = new FormData();
+        formData.append("file", file);
+        document.getElementById("status").innerHTML = "File uploaded successfully.";
+        
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("POST", "/upload");
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     document.getElementById("status").innerHTML = "File uploaded successfully.";
+        //   } else {
+        //     document.getElementById("status").innerHTML = "Error uploading file.";
+        //   }
+        // };
+        // xhr.send(formData);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Download Example</title>
+  </head>
+  <body>
+    
+    <h1>File Download Example</h1>
+    <a href="./ISStudentskaSluzba.docx" download>Download Sluzba File</a>
+    <!-- For server  -->
+    <!-- <button type="button" onclick="downloadFile()">Download File</button> -->
+    
+    <script>
+      function downloadFile() {
+        // NOTE for server
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", "endpoint", true);
+        // xhr.responseType = "blob";
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     var blob = xhr.response;
+        //     var link = document.createElement("a");
+        //     link.href = window.URL.createObjectURL(blob);
+        //     link.download = "my_document.docx";
+        //     link.click();
+        //   } else {
+        //     alert("Error downloading file.");
+        //   }
+        // };
+        // xhr.send();
+      }
+    </script>
+  </body>
+</html>
