@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+   <title>File Upload Example</title>
+    <title>File Download Example</title>
+<style>
+  .container {
+  display: flex;
+  justify-content: center;
+}
+    .box {
+  background-color: #f9f9f9;
+  border: 1px solid blue;
+  padding: 15px;
+  width: 400px;
+  margin: 20px;
+  margin-top: 10px;
+}
+
+h2 {
+
+  font-size: 18px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:center;
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #e86e1f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.btn:hover {
+  background-color: #e86e1f;
+}
+.submit-button {
+    text-align: center;
+  }
+
+    .icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #6891ac;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 10px;
+        width: 100%;
+       max-width:  600px;
+        margin: 0 auto;
+        height: 40px;
+        margin-top: 10px;
+        
+      }
+      
+      .icon-container {
+        background-color: #17256a;
+        border-radius: 6%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+      
+        
+        margin-right: 10px;
+      }
+      
+      .exclamation-icon {
+        color: #fff;
+        font-size: 30px;
+        
+       
+      }
+      
+      .box-text {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+
+      }
+      .logo {
+  width: 100%;
+  height: 70px;
+  
+  
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 3px;
+   
+  
+  }
+.table-container
+{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+      </style>
+
+  </head>
+  <body>
+   
+    <form>
+        <img src="ucg2.png" alt="logo" class="logo">
+        <div class="icon-box">
+            <div class="icon-container">
+              <span class="exclamation-icon">!</span>
+            </div>
+            <p class="box-text">Pažljivo pročitajte informacije o upisima i prijavama</p>
+          </div>
+          <div class="container">
+          <div class="box">
+
+            <h2>Podnesi zahtjev za upis</h2>
+            
+            <div class="submit-button">
+            <a href="zahtjev.html" class="btn">Podnesi zahtjev</a>
+          </div>
+          </div>
+          <div class="box">
+            <h2>Podnesi zahtjev za ispis</h2>
+           
+            <a href="zahtjev2.html" class="btn">Podnesi zahtjev</a>
+          </div>
+          </div>
+     
+    
+    </form>
+    <p id="status"></p>
+    <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>JMB</th>
+          <th>Studijski program</th>
+          
+          <th>Status prijave</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr>
+          <td>1</td>
+          <td>Marko</td>
+          <td>Marković</td>
+          <td>1908003263985</td>
+          <td>ETF</td>
+          <td>Na čekanju</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+    
+    <script>
+      function uploadFile() {
+        var fileInput = document.getElementById("file");
+        if(!fileInput.files.length) {
+          return alert("Please choose a file to upload first.");
+        }
+        var file = fileInput.files[0];
+        var formData = new FormData();
+        formData.append("file", file);
+        document.getElementById("status").innerHTML = "File uploaded successfully.";
+        
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("POST", "/upload");
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     document.getElementById("status").innerHTML = "File uploaded successfully.";
+        //   } else {
+        //     document.getElementById("status").innerHTML = "Error uploading file.";
+        //   }
+        // };
+        // xhr.send(formData);
+      }
+      
+    
+  
+      function downloadFile() {
+        // NOTE for server
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", "endpoint", true);
+        // xhr.responseType = "blob";
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     var blob = xhr.response;
+        //     var link = document.createElement("a");
+        //     link.href = window.URL.createObjectURL(blob);
+        //     link.download = "my_document.docx";
+        //     link.click();
+        //   } else {
+        //     alert("Error downloading file.");
+        //   }
+        // };
+        // xhr.send();
+      }
+    </script>
+  </body>
+</html>

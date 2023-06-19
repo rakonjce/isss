@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <style>
+    body
+{
+  background-image: url("univerzitet.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+
+  
+  
+       
+
+
+}
+
+.nav-main
+{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 70px;
+ 
+    display:flex;
+    flex-wrap: wrap;
+    z-index: 1000;
+
+}
+
+.btn-toggle-nav
+{
+    width: 60px;
+    height: 100%;
+  
+    background-color:rgb(12,52,91);
+    background-image: url("meni.png") ;
+    background-repeat:no-repeat;
+    background-size: 40%;
+    background-position:center;
+    cursor:pointer;
+    margin-left:0;
+
+    
+    
+}
+.logo {
+  width: 100px;
+  height: 70px;
+  flex-grow: 1;
+  
+  margin-left: 0;
+  
+}
+.btn-toggle-nav:hover
+{opacity: 0.5;
+}
+.nav-main ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+.nav-main ul li
+{
+    list-style: none;
+    line-height: 60px;
+
+}
+.nav-main ul li a
+{
+    display: block;
+    padding: 0;
+    height: 100%;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(12,52,91)
+  
+
+
+}
+.nav-sidebar
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: calc(100vh - 70px);
+    padding: 0 5px;
+    background-color:rgb(12,52,91);
+    background: linear-gradient(to bottom, rgb(12,52,91), #0b527b);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    
+
+
+
+}
+.nav-sidebar ul
+{
+
+    padding-top:15px ;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+
+.nav-sidebar ul li
+{
+    line-height: 60px;
+    list-style: none;
+
+
+}
+.nav-sidebar ul li span, .nav-sidebar ul li a
+{
+    display: block;
+    height: 60px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:white;
+    font-family: arial;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+
+}
+.nav-sidebar ul li a:hover{
+    background-color:#b9c5e3 ;
+
+}
+  </style>
+  
+  </head>
+  <body>
+    <nav class="nav-main">
+      <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+      <img src="ucg.png" alt="Logo" class="logo">
+    </nav>
+
+    <aside class="nav-sidebar">
+      <ul>
+        <li><span ></span</li>
+          <li><a href="upisispis.html">Upis/Ispis</a></li>
+       
+        <li><a href="documents.html">Dokumenta</a></li>
+        <li><a href="rezultati.html">Obrada rezultata</a></li>
+      </ul>
+    </aside>
+  </body>
+
+  <script>
+
+let toggleNavStatus=false;
+let toggleNav=function(){
+    let getSidebar=document.querySelector(".nav-sidebar");
+    let getSidebarUl=document.querySelector(".nav-sidebar ul");
+ let getSidebarTitle=document.querySelector(".nav-sidebar span");
+ let getSidebarLinks=document.querySelectorAll(".nav-sidebar a");
+
+
+ if (toggleNavStatus===false)
+ {
+    getSidebarUl.style.visibility="visible";
+    getSidebar.style.width="272px";
+    getSidebarTitle.style.opacity="0.5";
+
+
+    let arrayLength=getSidebarLinks.length;
+    for (let i=0; i<arrayLength;i++)
+    {
+        getSidebarLinks[i].style.opacity="1";
+    }
+
+toggleNavStatus=true;
+
+        
+    }
+
+    else if (toggleNavStatus===true)
+ {
+   
+    getSidebar.style.width="50px";
+    getSidebarTitle.style.opacity="0";
+
+
+    let arrayLength=getSidebarLinks.length;
+    for (let i=0; i<arrayLength;i++)
+    {
+        getSidebarLinks[i].style.opacity="0";
+    }
+    getSidebarUl.style.visibility="hidden";
+toggleNavStatus=false;
+
+        
+    }
+ }
+
+
+  </script>
+  </html>

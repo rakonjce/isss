@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+  <title>Sign Up Form</title>
+  <style>
+    body {
+			display: flex;
+            
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0px;
+			padding: 0px;
+          
+		}
+
+    .container {
+      border: 2px solid blue;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      
+    }
+
+    form 
+        {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			border-radius: 10px;
+			padding: 20px;
+			background-color: #f2f2f2;
+			
+		}
+
+    input[type="text"],
+    input[type="email"] {
+        margin-top: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			width: 100%;
+			box-sizing: border-box;
+		}
+        .form-group {
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      margin-bottom: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      
+   
+      
+    
+
+    }
+
+    .form-group input {
+      flex: 1;
+      display:flex;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #name {
+        margin-right: 10px;
+    }
+    #surname{
+        margin-left:10px;
+    }
+    #telnumber {
+        margin-right: 10px;
+    }
+    #email {
+        margin-left: 10px;
+    }
+
+    #municipality {
+      margin-right: 10px;
+    }
+    #adress {
+      margin-left: 10px;
+    }
+
+    #datum {
+        margin-right: 10px;
+    }
+    #place{
+        margin-left: 10px;
+    }
+    
+
+    button {
+        background-color: #167797;
+			color: white;
+			cursor: pointer;
+			margin-top: 25px;
+            margin-bottom: 0px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+    }
+
+    button:hover {
+      background-color:rgb(12,52,91);
+    }
+
+    .jmb-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+    
+   
+    .notification {
+      color: rgba(255, 0, 0, 0.847);
+      margin-top: 5px;}
+      .form-row select {
+  width: 200px;
+}
+select {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    
+   
+    <form>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="faculty">Fakultet:</label>
+                <select id="faculty" name="faculty" required>
+                  <option value="">Odaberite fakultet</option>
+                  <option value="fakultet1">Arhitektonski fakultet</option>
+                  <option value="fakultet2">Biotehnički fakultet</option>
+                  <option value="fakultet3">Ekonomski fakultet</option>
+                  <option value="fakultet4">Elektrotehnički fakultet</option>
+                  <option value="fakultet5">Fakultet dramskih umjetnosti</option>
+                  <option value="fakultet6">Fakultet likovnih umjetnosti</option>
+                  <option value="fakultet7">Fakultet političkih nauka</option>
+                  <option value="fakultet8">Fakultet za sport i fizičko vaspitanje</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studyProgram">Studijski program:</label>
+                <select id="studyProgram" name="studyProgram" required>
+                  <option value="">Odaberite studijski program</option>
+                  <option value="program1">Osnovne studije</option>
+                  <option value="program2">Master studije</option>
+                  <option value="program3">Doktorske studije</option>
+                 
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studyYear">Studijska godina:</label>
+                <select id="studyYear" name="studyYear" required>
+                  <option value="">Odaberite studijsku godinu</option>
+                  <option value="godina1">I</option>
+                  <option value="godina2">II</option>
+                  <option value="godina3">III</option>
+                  
+                </select>
+              </div>
+              <div class="jmb-box">
+               
+                <input type="text" id="jmb" name="jmb" placeholder="JMB*" required>
+              </div>
+              
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Ime*" required>
+                <input type="text" id="surname" name="surname" placeholder="Prezime*" required>
+              </div>
+              <div class="form-group">
+                <input type="date" id="datum" name="datum" required placeholder="Datum rođenja*">
+                <input type="text" id="place" name="place" placeholder="Mjesto rođenja*" required>
+              </div>
+              <div class="form-group">
+                
+                <input type="text" id="municipality" name="municipality" placeholder="Opština">
+                <input type="text" id="adress" name="adress" placeholder="Adresa">
+                </div>
+                <div class="form-group">
+                <input type="text" id="telnumber" name="telnumber" placeholder="Broj telefona*" required>
+                <input type="email" id="email" name="email" placeholder="Email">
+              </div>
+              
+              <button type="button" onclick="createAccount()">Pošalji zahtjev</button>
+              <p class="notification" id="usernameNotification"></p>
+      <p class="notification" id="emailNotification"></p>
+            </form>
+          </div>
+
+  <script>
+    function createAccount() {
+      var name = document.getElementById("name").value;
+      var surname = document.getElementById("surname").value;
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      if (username === "admin") {
+        document.getElementById("usernameNotification").textContent = "Korisničko ime je zauzeto.";
+      } else {
+        document.getElementById("usernameNotification").textContent = "";
+      }
+
+      // Check if email is valid
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailNotification").textContent = "Nevalidna email adresa.";
+      } else {
+        window.location.href = "pocetna.html";
+      }
+			
+    }
+     
+  </script>
+</body>
+</html>
