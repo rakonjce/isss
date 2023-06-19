@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>File Upload Example</title>
+    <title>File Download Example</title>
+<style>
+    .icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #6891ac;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        padding: 10px;
+        width: 100%;
+       max-width:  400px;
+        margin: 0 auto;
+      }
+      
+      .icon-container {
+        background-color: #17256a;
+        border-radius: 60%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+      }
+      
+      .exclamation-icon {
+        color: #fff;
+        font-size: 30px;
+      }
+      
+      .box-text {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+
+      }
+      </style>
+
+  </head>
+  <body>
+   
+    <form>
+        <div class="icon-box">
+            <div class="icon-container">
+              <span class="exclamation-icon">!</span>
+            </div>
+            <p class="box-text">Pročitajte informacije o upisima i prijavama</p>
+          </div>
+          
+      <label for="file">Select a file:</label>
+      <input type="file" id="file" name="file"><br>
+      <button type="button" onclick="uploadFile()">Upload</button>
+      <h1>File Download Example</h1>
+    <a href="./ISStudentskaSluzba.docx" download>Download Sluzba File</a>
+    <!-- For server  -->
+    <!-- <button type="button" onclick="downloadFile()">Download File</button> -->
+    </form>
+    <p id="status"></p>
+    
+    <script>
+      function uploadFile() {
+        var fileInput = document.getElementById("file");
+        if(!fileInput.files.length) {
+          return alert("Please choose a file to upload first.");
+        }
+        var file = fileInput.files[0];
+        var formData = new FormData();
+        formData.append("file", file);
+        document.getElementById("status").innerHTML = "File uploaded successfully.";
+        
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("POST", "/upload");
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     document.getElementById("status").innerHTML = "File uploaded successfully.";
+        //   } else {
+        //     document.getElementById("status").innerHTML = "Error uploading file.";
+        //   }
+        // };
+        // xhr.send(formData);
+      }
+      
+    
+  
+      function downloadFile() {
+        // NOTE for server
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", "endpoint", true);
+        // xhr.responseType = "blob";
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     var blob = xhr.response;
+        //     var link = document.createElement("a");
+        //     link.href = window.URL.createObjectURL(blob);
+        //     link.download = "my_document.docx";
+        //     link.click();
+        //   } else {
+        //     alert("Error downloading file.");
+        //   }
+        // };
+        // xhr.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+  <title>Sign Up Form</title>
+  <style>
+    body {
+			display: flex;
+            
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0px;
+			padding: 0px;
+          
+		}
+
+    .container {
+      border: 2px solid blue;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      
+    }
+
+    form 
+        {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+			border-radius: 10px;
+			padding: 20px;
+			background-color: #f2f2f2;
+			
+		}
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        margin-top: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			width: 100%;
+			box-sizing: border-box;
+		}
+        .form-group {
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    
+
+    }
+
+    .form-group input {
+      flex: 1;
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+    }
+    #name {
+        margin-right: 10px;
+    }
+    #surname{
+        margin-left:10px;
+    }
+    #username {
+        margin-right: 10px;
+    }
+    #email {
+        margin-left: 10px;
+    }
+
+    #country {
+      margin-right: 10px;
+    }
+    #city {
+      margin-left: 10px;
+    }
+
+    button {
+        background-color: #167797;
+			color: white;
+			cursor: pointer;
+			margin-top: 25px;
+            margin-bottom: 0px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+    }
+
+    button:hover {
+      background-color:rgb(12,52,91);
+    }
+
+    
+    
+   
+    .notification {
+      color: rgba(255, 0, 0, 0.847);
+      margin-top: 5px;}
+
+  </style>
+</head>
+<body>
+   
+  <div class="container">
+    <img src="logo.png" alt="Image Description" width="400" >
+   
+    <form>
+
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Ime" required>
+                <input type="text" id="surname" name="surname" placeholder="Prezime" required>
+              </div>
+              <div class="form-group">
+                
+                <input type="text" id="country" name="country" placeholder="Država" required>
+                <input type="text" id="city" name="city" placeholder="Grad" required>
+                </div>
+                <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Korisničko ime" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+              </div>
+              <input type="password" id="password" name="password" placeholder="Šifra" required>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Potvrdi šifru" required>
+              <button type="button" onclick="createAccount()">Registruj se</button>
+              <p class="notification" id="usernameNotification"></p>
+      <p class="notification" id="emailNotification"></p>
+            </form>
+          </div>
+
+  <script>
+    function createAccount() {
+      var name = document.getElementById("name").value;
+      var surname = document.getElementById("surname").value;
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      if (username === "admin") {
+        document.getElementById("usernameNotification").textContent = "Korisničko ime je zauzeto.";
+      } else {
+        document.getElementById("usernameNotification").textContent = "";
+      }
+
+      // Check if email is valid
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailNotification").textContent = "Nevalidna email adresa.";
+      } else {
+        window.location.href = "pocetna.html";
+      }
+			
+    }
+     
+  </script>
+</body>
+</html>

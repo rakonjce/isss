@@ -1,132 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>University Degrees and Specializations</title>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-        }
-        
-        h1 {
-          text-align: center;
-        }
-        
-        ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-        }
-        
-        li {
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0,0,0,.2);
-          margin: 10px;
-          padding: 20px;
-          width: calc(33.33% - 20px);
-          text-align: center;
-          font-size: medium;
-        }
-        
-        a {
-          text-decoration: none;
-          color: #333;
-        }
-        
-        a:hover {
-          color: #008cba;
-        }
-      </style>
-       <style>
-        .card {
-          background-color: #008cba;
-          border-radius: 5px;
-          box-shadow: 0 2px 4px rgba(0,0,0,.2);
-          color: white;
-          margin: 20px auto;
-          padding: 20px;
-          text-align: center;
-        }
-        
-        .card h2 {
-          font-weight: bold;
-        }
-      </style>
-  </head>
-  <body>
-    <h2>Home</h2>
-    <h3>Welcome User</h3>
-    <button id="logout_btn" value="Log Out" onclick="logout()">Log out</button><br>
-    <h1>University Degrees and Specializations</h1>
-    <p>Choose a degree to see its specializations:</p>
-    <div class="card">
-        <h2>Card Example</h2>
-        <p>Card </p>
-      </div>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    
+      
+    }
 
-    <ul>
-        <li>
-            <div class="card">
-                <h2>Card Example</h2>
-                <p>This is an example of a card with a background color and centered text that is bolded.</p>
-              </div>
+    .container {
+      border: 2px solid blue;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #a4a7b9d6;
+    }
 
-        </li>
-      <li><a href="bachelor.html">Bachelor's Degree</a></li>
-      <li><a href="#master">Master's Degree</a></li>
-      <li><a href="#doctorate">Doctorate Degree</a></li>
-    </ul>
+    h1 {
+      font-size: 19px;
+      margin-bottom: 30px;
+      color:rgb(12,52,91);
+      text-align: center;
+    }
+
+    .btn {
+      margin: 35px;
+      padding: 10px 20px;
+      font-size: 15px;
+      text-decoration:none;
+      color: #fff;
+      background-color: #167797;
+      border-radius: 10px;
+      border: none;
+      cursor:pointer;
+    }
+
     
-    <h2 id="bachelor">Bachelor's Degree</h2>
-    <ul>
-      <li>Accounting</li>
-      <li>Biology</li>
-      <li>Computer Science</li>
-      <li>Education</li>
-      <li>Engineering</li>
-      <li>English</li>
-      <li>History</li>
-      <li>Marketing</li>
-      <li>Mathematics</li>
-      <li>Psychology</li>
-      <li>Sociology</li>
-    </ul>
     
-    <h2 id="master">Master's Degree</h2>
-    <ul>
-      <li>Business Administration</li>
-      <li>Counseling</li>
-      <li>Education</li>
-      <li>Engineering</li>
-      <li>Information Technology</li>
-      <li>Law</li>
-      <li>Marketing</li>
-      <li>Mathematics</li>
-      <li>Psychology</li>
-      <li>Social Work</li>
-      <li>Statistics</li>
-    </ul>
-    
-    <h2 id="doctorate">Doctorate Degree</h2>
-    <ul>
-      <li>Biology</li>
-      <li>Business Administration</li>
-      <li>Counseling</li>
-      <li>Education</li>
-      <li>Engineering</li>
-      <li>Law</li>
-      <li>Mathematics</li>
-      <li>Psychology</li>
-      <li>Social Work</li>
-      <li>Statistics</li>
-    </ul>
-    <script>
-        function logout() {
-            window.location.href = "proba.html";
-        }
-    </script>
-  </body>
+  </style>
+</head>
+<body style="background: url('pic.jpg') no-repeat 50% 40%;">
+  <div class="container">
+    <h1>Dobrodošli u e-Studentsku službu</h1>
+   
+    <div>
+      <a class="btn" href="login.html">Prijavi se</a>
+      <a class="btn" href="signup.html">Registruj se</a>
+    </div>
+  </div>
+</body>
 </html>

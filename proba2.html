@@ -1,70 +1,211 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
-	<title>Login Form</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		/* CSS for the login form */
-		form {
-			margin: auto;
-			max-width: 400px;
-			border: 1px solid blue;
-			padding: 20px;
-		}
-		input[type=text], input[type=password] {
-			width: 100%;
-			padding: 12px 20px 12px 40px;
-			margin: 8px 0;
-			display: inline-block;
-			border: 1px solid #ccc;
-			box-sizing: border-box;
-			background-image: url('https://www.example.com/user-icon.png');
-			background-repeat: no-repeat;
-			background-size: 20px 20px;
-			background-position: 10px center;
-		}
-		input[type=password] {
-			background-image: url('https://www.example.com/password-icon.png');
-		}
-		button {
-			background-color: blue;
-			color: white;
-			padding: 14px 20px;
-			margin: 8px 0;
-			border: none;
-			cursor: pointer;
-			width: 100%;
-		}
-	</style>
-</head>
-<body>
-	<form>
-		<div>
-			<img src="https://www.example.com/logo.png" alt="Logo" style="width: 50%; margin: auto;">
-		</div>
-		<label for="username"><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="username" id="username" required>
-		<label for="password"><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="password" id="password" required>
-		<button type="button" onclick="login()">Login</button>
-	</form>
-	<script>
-		// JavaScript for the login form
-		function login() {
-			// Get the values entered in the username and password fields
-			var username = document.getElementById("username").value;
-			var password = document.getElementById("password").value;
+  <style>
+    body
+{
+  background-image: url("univerzitet.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
 
-			// Check if the username and password match the expected values
-			if (username !== "example_username" || password !== "example_password") {
-				// If they do not match, display a notification message
-				alert("Wrong username or password. Please try again.");
-			} else {
-				// If they match, redirect the user to the dashboard or another page
-				window.location.href = "dashboard.html";
-			}
-		}
-	</script>
-</body>
-</html>
+  
+  
+       
+
+
+}
+.container
+{
+  
+    
+}
+.nav-main
+{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 70px;
+ 
+    display:flex;
+    flex-wrap: wrap;
+    z-index: 1000;
+
+}
+
+.btn-toggle-nav
+{
+    width: 60px;
+    height: 100%;
+  
+    background-color:rgb(12,52,91);
+    background-image: url("meni.png") ;
+    background-repeat:no-repeat;
+    background-size: 40%;
+    background-position:center;
+    cursor:pointer;
+    margin-left:0;
+
+    
+    
+}
+.logo {
+  width: 100px;
+  height: 70px;
+  flex-grow: 1;
+  
+  margin-left: 0;
+  
+}
+.btn-toggle-nav:hover
+{opacity: 0.5;
+}
+.nav-main ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+.nav-main ul li
+{
+    list-style: none;
+    line-height: 60px;
+
+}
+.nav-main ul li a
+{
+    display: block;
+    padding: 0;
+    height: 100%;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(12,52,91)
+  
+
+
+}
+.nav-sidebar
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: calc(100vh - 70px);
+    padding: 0 5px;
+    background-color:rgb(12,52,91);
+    background: linear-gradient(to bottom, rgb(12,52,91), #0b527b);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    
+
+
+
+}
+.nav-sidebar ul
+{
+
+    padding-top:15px ;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+
+.nav-sidebar ul li
+{
+    line-height: 60px;
+    list-style: none;
+
+
+}
+.nav-sidebar ul li span, .nav-sidebar ul li a
+{
+    display: block;
+    height: 60px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:white;
+    font-family: arial;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+
+}
+.nav-sidebar ul li a:hover{
+    background-color:#b9c5e3 ;
+
+}
+  </style>
+  
+  </head>
+  <body>
+    <nav class="nav-main">
+      <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+      <img src="ucg2.png" alt="Logo" class="logo">
+    </nav>
+
+    <aside class="nav-sidebar">
+      <ul>
+        <li><span ></span</li>
+          <li><a href="upis.html">Upis</a></li>
+        <li><a href="ispis.html">Ispis</a></li>
+        <li><a href="documents.html">Dokumenta</a></li>
+        <li><a href="rezultati.html">Obrada rezultata</a></li>
+      </ul>
+    </aside>
+  </body>
+
+  <script>
+
+let toggleNavStatus=false;
+let toggleNav=function(){
+    let getSidebar=document.querySelector(".nav-sidebar");
+    let getSidebarUl=document.querySelector(".nav-sidebar ul");
+ let getSidebarTitle=document.querySelector(".nav-sidebar span");
+ let getSidebarLinks=document.querySelectorAll(".nav-sidebar a");
+
+
+ if (toggleNavStatus===false)
+ {
+    getSidebarUl.style.visibility="visible";
+    getSidebar.style.width="272px";
+    getSidebarTitle.style.opacity="0.5";
+
+
+    let arrayLength=getSidebarLinks.length;
+    for (let i=0; i<arrayLength;i++)
+    {
+        getSidebarLinks[i].style.opacity="1";
+    }
+
+toggleNavStatus=true;
+
+        
+    }
+
+    else if (toggleNavStatus===true)
+ {
+   
+    getSidebar.style.width="50px";
+    getSidebarTitle.style.opacity="0";
+
+
+    let arrayLength=getSidebarLinks.length;
+    for (let i=0; i<arrayLength;i++)
+    {
+        getSidebarLinks[i].style.opacity="0";
+    }
+    getSidebarUl.style.visibility="hidden";
+toggleNavStatus=false;
+
+        
+    }
+ }
+
+
+  </script>
+  </html>

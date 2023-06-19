@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	<title>Login Form</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+		
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 2px solid blue;
+			border-radius: 10px;
+			padding: 20px;
+			background-color: #f2f2f2;
+		}
+		
+		input[type="text"], input[type="password"] {
+			margin-top: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			width: 100%;
+			box-sizing: border-box;
+		}
+		
+		button {
+			background-color: #167797;
+			color: white;
+			cursor: pointer;
+			margin-top: 20px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+		}
+		
+		button:hover {
+			background-color:rgb(12,52,91);
+		}
+        img {
+            margin-bottom: 20px;
+        }
+	</style>
+</head>
+<body>
+    <form>
+	<img src="logo.png" alt="Image Description" width="300">
+	
+	
+		<input type="text" id="username" name="username" placeholder="Korisničko ime" required>
+
+		
+		<input type="password" id="password" name="password"  placeholder="Šifra" required>
+
+		<button type="button" onclick="login()">Prijavi se</button>
+	</form>
+
+    <script>
+        function login()
+        {
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            if (username!=="admin" || password!=="admin") {
+				alert("Pogrešno korisničko ime ili šifra!");
+			}
+			else {
+				// poziv na bazu, provjera da li je korisnik u bazi
+				window.location.href = "proba2.html";
+			}
+        }
+					</script>
+</body>
+</html>

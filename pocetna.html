@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+        body {
+          
+            
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 30px;
+			padding: 30px;
+        }
+        
+        h1 {
+          text-align: center;
+        }
+        
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+        li {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,.2);
+          margin: 10px;
+          padding: 20px;
+          width: calc(33.33% - 20px);
+          text-align: center;
+          font-size: medium;
+        }
+        
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+        
+        a:hover {
+          color: #008cba;
+        }
+        .degrees-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+      }
+
+      .bachelor-list {
+        flex: 1;
+        text-align: left;
+      }
+
+      .master-list {
+        flex: 1;
+        text-align: right;
+      }
+    
+      
+        .card {
+          background-color: #008cba;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0,0,0,.2);
+          color: white;
+          margin: 20px auto;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        .card h2 {
+          font-weight: bold;
+        }
+      </style>
+  </head>
+  <body>
+    <img src="logo22.png" alt="Image Description" width="400" >
+    <p>Choose a degree to see its specializations:</p>
+   <div class="card">
+    
+        <h2>Card Example</h2>
+        <p>Card </p>
+      </div>
+    <ul>
+        <li>
+           <div class="card">
+                <h2>Card Example</h2>
+                <p>This is an example of a card with a background color and centered text that is bolded.</p>
+              </div>
+        </li>
+      <li><a href="bachelor.html">Bachelor's Degree</a></li>
+      <li><a href="#master">Master's Degree</a></li>
+     
+    </ul>
+    
+    <h2 id="bachelor">Bachelor's Degree</h2>
+    <ul>
+      <li>Arhitektonski fakultet</li>
+      <li>Biotehnički fakultet</li>
+      <li>Ekonomski fakultet</li>
+      <li>Elektrotehnički fakultet</li>
+      <li>Fakultet dramskih umjetnosti</li>
+      <li>Fakultet likovnih umjetnosti</li>
+      <li>Fakultet političkih nauka</li>
+      <li>Fakultet za sport i fizičko vaspitanje</li>
+      <li>Fakultet za turizam i hotelijerstvo</li>
+      <li>Filološki fakultet</li>
+      <li>Filozofski fakultet</li>
+      <li>Građevinski fakultet</li>
+      <li>Mašinski fakultet</li>
+      <li>Medicinski fakultet</li>
+      <li>Metalurško-tehnološki fakultet</li>
+      <li>Muzička akademija</li>
+      <li>Pomorski fakultet Kotor</li>
+      <li>Pravni fakultet</li>
+      <li>Prirodno-matematički fakultet</li>
+      
+    </ul>
+    
+    <h2 id="master">Master's Degree</h2>
+    <ul>
+      <li>Business Administration</li>
+      <li>Counseling</li>
+      <li>Education</li>
+      <li>Engineering</li>
+      <li>Information Technology</li>
+      <li>Law</li>
+      <li>Marketing</li>
+      <li>Mathematics</li>
+      <li>Psychology</li>
+      <li>Social Work</li>
+      <li>Statistics</li>
+    </ul>
+    
+    <button id="logout_btn" value="Log Out" onclick="logout()">Log out</button><br>
+   
+    <script>
+        function logout() {
+            window.location.href = "proba.html";
+        }
+    </script>
+  </body>
+</html>
